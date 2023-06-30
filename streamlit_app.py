@@ -10,7 +10,7 @@ def generate_response(input_text):
   st.info(llm(input_text))
 
 with st.form('my_form'):
-  text = st.text_area('Enter text:', '可以帮我咨询一些法律问题么？')
+  text = st.text_area('Enter text:', '可以咨询一些法律问题么？')
   submitted = st.form_submit_button('Submit')
   if not openai_api_key.startswith('sk-'):
     st.warning('Please enter your OpenAI API key!', icon='⚠')
