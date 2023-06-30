@@ -7,7 +7,7 @@ openai_api_key = st.text_input('OpenAI API Key')
 
 def generate_response(input_text):
   llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
-  st.info(llm(input_text))
+  st.write(llm(input_text))
 
 with st.form('my_form'):
   text = st.text_area('Enter text:', '帮我起草一个民间借贷起诉状')
