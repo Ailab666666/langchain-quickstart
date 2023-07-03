@@ -23,19 +23,5 @@ if prompt := st.chat_input():
     st.session_state.messages.append(msg)
     st.chat_message("assistant").write(msg.content)
 
-# Hide the menu and footer.
-hide_menu_footer = """
-        <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        </style>
-        """
-st.markdown(hide_menu_footer, unsafe_allow_html=True)
-
-# Hide the GitHub link.
-hide_github_link = """
-        <style>
-        .viewerBadge_container__1QSob {visibility: hidden;}
-        </style>
-        """
-st.markdown(hide_github_link, unsafe_allow_html=True)
+# 隐藏 GitHub 按钮
+st.secrets = True
