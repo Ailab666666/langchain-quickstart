@@ -3,6 +3,14 @@ import streamlit as st
 
 openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
 
+hide_menu = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu, unsafe_allow_html=True)
+
 st.title("💬 Jane Law bot")
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
