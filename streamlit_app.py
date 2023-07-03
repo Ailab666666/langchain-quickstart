@@ -23,5 +23,10 @@ if prompt := st.chat_input():
     st.session_state.messages.append(msg)
     st.chat_message("assistant").write(msg.content)
 
-# 隐藏 GitHub 按钮
-st.secrets = True
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
